@@ -1,0 +1,20 @@
+services:
+  mysql:
+    platform: linux/amd64
+    image: mysql:8.0.23
+    container_name: class-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: class
+    ports:
+      - 3306:3306
+    volumes:
+      - class-mysql:/var/lib/mysql:rw
+      - ./mysql/init:/docker-entrypoint-initdb.
+
+  redis:
+    image: redis:7.2.4
+    container_name: class-redis
+    ports:
+      - 6379:6379
