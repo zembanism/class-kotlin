@@ -10,7 +10,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - class-mysql:/var/lib/mysql:rw
+      - ./db_data:/var/lib/mysql:rw
       - ./mysql/init:/docker-entrypoint-initdb.
 
   redis:
