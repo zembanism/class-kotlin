@@ -62,25 +62,30 @@
 
 * 초기 Flyway로 Table, 초기 데이터 생성.
   * 현재 경로 확인
-    * > pwd
+    > pwd
   * 경로가 tools에 있다면 root로 이동.
-    * > cd ..
-  * flyway 최초 시작시 BaseLine 수행.
-    * > ./gradlew flywayBaseline
+    ```cd ..```
+    * flyway 최초 시작시 BaseLine 수행.
+    ```
+    ./gradlew flywayBaseline
+    ./gradlew flywayClean 
+    ./gradlew flywayMigrate
+    ```
   * 문제가 있을 경우 Clean 수행.
-    * > ./gradlew flywayClean
+    > ./gradlew flywayClean
   * flyway 초기 데이터 Migrate 수행.
-    * > ./gradlew flywayMigrate
+    > ./gradlew flywayMigrate
 
 # Entity 추가시
 
 * entity 추가후 querydsl에서 사용하려면 아래 명령어를 실행.
-  * > ./gradlew kaptKotlin
+```./gradlew kaptKotlin```
 
 # Application 구동
-
-* > ./gradlew :api:clean :api:build
-* > ./gradlew :api:bootRun
+```
+./gradlew :api:clean :api:build
+./gradlew :api:bootRun
+```
 
 # Swagger 접속정보 & API Test
 
